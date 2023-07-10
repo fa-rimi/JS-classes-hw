@@ -67,23 +67,20 @@ const pirate1 = new pirates(
   "Meat Meat and More Meat",
   "The Thousand Sunny"
 );
-const pirate2 = new pirates("Nami", false, "Tangerines", "LuNa");
-const pirate3 = new pirates("Jack Sparrow", false, "Rum", "The Black Pearl");
+const pirate2 = new pirates("Nami", true, "Tangerines", "LuNa");
+const pirate3 = new pirates("Karoo", false, "Cold Water", "The Thousand Sunny");
+const strawHats = [pirate1, pirate2, pirate3];
 
-console.log(pirate1);
-pirate1.call();
-pirate1.boatName();
-pirate1.iAm();
-pirate1.hungry();
+const pirate4 = new pirates("Jack Sparrow", false, "Rum", "The Black Pearl");
+const pirate5 = new pirates("Jack", true, "Everything", "The Black Pearl");
+const pirate6 = new pirates("Swann", false, "Food", "The Black Pearl");
+const blackPearl = [pirate4, pirate5, pirate6];
 
-console.log(pirate2);
-pirate2.call();
-pirate2.boatName();
-pirate2.iAm();
-pirate2.hungry();
+// Nested loop version
+for (const pirates of strawHats) {
+    console.log(pirates);
 
-console.log(pirate3);
-pirate3.call();
-pirate3.boatName();
-pirate3.iAm();
-pirate3.hungry();
+    for (const [key, value] of Object.entries(pirates)) {
+        console.log(key, value);  
+    }
+}
